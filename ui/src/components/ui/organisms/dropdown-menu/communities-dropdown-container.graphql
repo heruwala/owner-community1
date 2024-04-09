@@ -1,0 +1,32 @@
+query SharedCommunitiesDropdownContainerCommunity($id: ID!) {
+  communityById(id: $id) {
+    ...SharedCommunitiesDropdownContainerCommunityFields
+  }
+  communities {
+    ...SharedCommunityMenuContainerCommunitiesFields
+  }
+}
+
+fragment SharedCommunitiesDropdownContainerCommunityFields on Community {
+  name
+  domain
+  whiteLabelDomain
+  handle
+
+  id
+  createdAt
+  updatedAt
+}
+
+fragment SharedCommunityMenuContainerCommunitiesFields on Community {
+  name
+  domain
+  whiteLabelDomain
+  handle
+  publicContentBlobUrl
+
+  id
+  schemaVersion
+  createdAt
+  updatedAt
+}
